@@ -249,4 +249,15 @@ $(document).ready(() => {
 	});
 
 	initVideoconferencing();
+	$.ajax({
+		type: 'GET',
+		url: 'http://nextcloud.localhost:9090/',
+		contentType: 'application/json',
+		dataType: 'json',
+	}).done((res) => {
+		console.log('Nextcloud login...');
+	}).fail((err) => {
+		// eslint-disable-next-line no-console
+		console.error(err);
+	});
 });

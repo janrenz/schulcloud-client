@@ -66,6 +66,7 @@ const config = {
 				styleSrc: 'https://vjs.zencdn.net',
 			},
 			'^/teams': {
+				defaultSrc: 'http://nextcloud.localhost:9090/',
 				fontSrc: 'https://vjs.zencdn.net',
 				styleSrc: 'https://vjs.zencdn.net',
 			},
@@ -118,6 +119,7 @@ const config = {
 	*/
 	accessControlAllowOrigin: {
 		'^/rocketChat/authGet': 'https://scchat.dbildungscloud.de',
+		'^teams': 'http://nextcloud.localhost:9090',
 	},
 	// Additional default Security header can be set - key reprensents the HTTP header and the value the value of the header
 	additionalSecurityHeader: {
