@@ -65,8 +65,8 @@ $(document).ready(() => {
 				startDate,
 				endDate,
 			},
-			submitDataTestId: 'btn-submit-create-event',
-			closeDataTestId: 'btn-cancel-create-event',
+			submitDataTestId: '-create-event',
+			closeDataTestId: '-create-event',
 		});
 
 		$createEventModal.appendTo('body').modal('show');
