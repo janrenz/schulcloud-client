@@ -329,6 +329,8 @@ $(document).ready(() => {
 			title: $t('teams._team.members.add.headline.sendInvitationAgain'),
 			closeLabel: $t('global.button.cancel'),
 			submitLabel: $t('teams._team.members.add.button.sendInvitation'),
+			submitDataTestId: 'resend-invitation',
+			closeDataTestId: 'resend-invitation',
 		});
 
 		$resendInvitationModal.appendTo('body').modal('show');
@@ -364,6 +366,8 @@ $(document).ready(() => {
 			title: $t('teams._team.members.add.headline.deleteInvitation'),
 			closeLabel: $t('global.button.cancel'),
 			submitLabel: $t('teams._team.members.add.button.deleteInvitation'),
+			submitDataTestId: 'delete-invitation',
+			closeDataTestId: 'delete-invitation',
 		});
 
 		$deleteMemberModal.appendTo('body').modal('show');
@@ -403,6 +407,8 @@ $(document).ready(() => {
 			closeLabel: $t('global.button.cancel'),
 			submitLabel: $t('teams._team.members.button.editMember'),
 			payload: userId,
+			submitDataTestId: 'edit-member',
+			closeDataTestId: 'edit-member',
 		});
 
 		// needed?? const $modalForm = $editMemberModal.find('.modal-form');
@@ -453,6 +459,8 @@ $(document).ready(() => {
 			closeLabel: $t('global.button.cancel'),
 			submitLabel: $t('teams._team.members.button.deleteMember'),
 			payload: userIdToRemove,
+			submitDataTestId: 'delete-member',
+			closeDataTestId: 'delete-member',
 		});
 
 		// Needed?? const $modalForm = $deleteMemberModal.find('.modal-form');
@@ -494,6 +502,8 @@ $(document).ready(() => {
 			closeLabel: $t('global.button.cancel'),
 			submitLabel: $t('teams._team.members.button.deleteClass'),
 			payload: classIdToRemove,
+			submitDataTestId: 'delete-class',
+			closeDataTestId: 'delete-class',
 		});
 
 		// Needed?? const $modalForm = $deleteClassModal.find('.modal-form');

@@ -9,23 +9,23 @@
     <div class="form-group mt-3" data-role="teacher">
         <h2 class="h3">{{$t "teams._team.members.headline.inviteTeacherFromOtherSchool"}}</h2>
         <p>{{$t "teams._team.members.text.selectTeacherFromRegisterOrInvitePerEmail"}}</p>
-        <button type="button" data-method="directory" class="btn btn-set-method">{{$t "teams._team.members.button.selectFromIndex"}}</button>
-        <button type="button" data-method="email" class="btn btn-set-method" >{{$t "teams._team.members.button.inviteByMail"}}</button>
+        <button type="button" data-method="directory" data-testid="select-from-directory" class="btn btn-set-method">{{$t "teams._team.members.button.selectFromIndex"}}</button>
+        <button type="button" data-method="email" data-testid="select-from-email" class="btn btn-set-method" >{{$t "teams._team.members.button.inviteByMail"}}</button>
 
 
-        <div class="form-group mt-3" data-method="directory">
+        <div class="form-group mt-3" data-testid="directory" data-method="directory">
             <h2 class="h3">{{$t "teams._team.members.headline.selectAndAddTeacher"}}</h2>
             <div class="form-group">
                 <label for="federalstate">{{$t "teams._team.members.label.federalState"}}</label>
-                <select class="search-enabled" placeholder="{{$t "teams._team.members.placeholder.selectFederalState"}}" data-force-value="true"
+                <select class="search-enabled" data-testid="federal-states" placeholder="{{$t "teams._team.members.placeholder.selectFederalState"}}" data-force-value="true"
                 data-placeholder="{{$t "teams._team.members.placeholder.selectFederalState"}}" name="federalstate" id="federalstate">
                     {{#each federalStates}}
-                        <option value="{{this._id}}" data-id="{{this._id}}" {{#ifeq @root.currentFederalState this._id}}selected="selected"{{/ifeq}}>{{this.name}}</option>
+                        <option value="{{this._id}}" data-id="{{this._id}}" {{#ifeq @root.currentFederalState this._id}}selected="selected"{{/ifeq}} data-testid="federal-state-{{this.name}}">{{this.name}}</option>
                     {{/each}}
                 </select>
             </div>
             <div class="form-group">
-                <label for="school">{{$t "global.link.school"}}</label>
+                <label for="school" data-testid="school">{{$t "global.link.school"}}</label>
                 <select class="search-enabled" placeholder="{{$t "teams._team.members.placeholder.selectSchool"}}"
                 data-placeholder="{{$t "teams._team.members.placeholder.selectSchool"}}" name="school" id="school">
                     {{#each schools}}
@@ -34,7 +34,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="teacher">{{$t "global.placeholder.Lehrer"}}</label>
+                <label for="teacher" data-testid="teacher">{{$t "global.placeholder.Lehrer"}}</label>
                 <select class="search-enabled" placeholder="{{$t "global.placeholder.selectTeacher"}}"
                 data-placeholder="{{$t "global.placeholder.selectTeacher"}}" name="teacher" id="teacher">
                     {{#each teachers}}
@@ -44,7 +44,7 @@
             </div>
             <div style="margin-bottom: 6rem" class="form-group padding-bottom">
                 <label for="role">{{$t "teams._team.members.label.roleOfInvitedTeacher"}}</label>
-                <select name="role" id="role" data-force-value="true" disabled="disabled">
+                <select name="role" id="role" data-force-value="true" disabled="disabled" data-testid="external-member-role">
                         <option value="teamadministrator" selected="selected">{{$t "teams._team.members.placeholder.teamAdmin"}}</option>
                 </select>
             </div>
@@ -61,7 +61,7 @@
                     </ul>
                 </div>
                     <label for="email">{{$t "teams._team.members.label.email"}}</label>
-                    <input class="form-control" type="text" name="email" id="email" placeholder="{{$t "teams._team.members.placeholder.insertEmail"}}">
+                    <input class="form-control" data-testid="teacher-email" type="text" name="email" id="email" placeholder="{{$t "teams._team.members.placeholder.insertEmail"}}">
             </div>
         </div>
     </div>
@@ -74,7 +74,7 @@
             {{else}}
             <label for="emailExpert">{{$t "teams._team.members.label.insertEmailOfExpertToInvite"}}</label>
             {{/if}}
-            <input class="form-control" type="text" name="email" id="emailExpert" placeholder="{{$t "teams._team.members.placeholder.insertEmail"}}">
+            <input class="form-control" type="text" name="email" data-testid="expert-email" id="emailExpert" placeholder="{{$t "teams._team.members.placeholder.insertEmail"}}">
         </div>
         {{#ifeq @root.theme.name "n21"}}
             {{> "help/partials/help_form_note"}}
