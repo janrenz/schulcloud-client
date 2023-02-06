@@ -91,6 +91,8 @@ $(document).ready(() => {
 			submitLabel: $t('global.button.save'),
 			fields: event,
 			action: `/teams/calendar/events/${event.attributes.uid}`,
+			submitDataTestId: 'edit-event',
+			closeDataTestId: 'edit-event',
 		});
 		$editEventModal.find('input[name=featureVideoConference]')
 			.bootstrapToggle(event.featureVideoConference ? 'on' : 'off');

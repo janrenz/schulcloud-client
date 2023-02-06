@@ -94,6 +94,8 @@ $(document).ready(() => {
 			title: $t('teams._team.members.headline.addMember'),
 			closeLabel: $t('global.button.cancel'),
 			submitLabel: $t('global.button.add'),
+			submitDataTestId: 'invite-internal-team-member',
+			closeDataTestId: 'invite-internal-team-member',
 		});
 
 		// Needed? const $modalForm = $addMemberModal.find('.modal-form');
