@@ -67,12 +67,12 @@ function populateModalForm(modal, data) {
 
 	if (data.submitDataTestId) {
 		const sanitizedDataTestId = data.submitDataTestId.replace(/[^A-Za-z0-9_-]*/img, '');
-		$btnSubmit.attr('data-testid', `submit-btn-${sanitizedDataTestId}`);
+		$btnSubmit.attr('data-testid', `btn-submit--${sanitizedDataTestId}`);
 	}
 
 	if (data.closeDataTestId) {
 		const sanitizedDataTestId = data.closeDataTestId.replace(/[^A-Za-z0-9_-]*/img, '');
-		$btnClose.attr('data-testid', `cancel-btn-${sanitizedDataTestId}`);
+		$btnClose.attr('data-testid', `btn-cancel-${sanitizedDataTestId}`);
 	}
 
 	$btnClose.html(data.closeLabel);
