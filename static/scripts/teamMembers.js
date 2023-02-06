@@ -166,6 +166,8 @@ $(document).ready(() => {
 			title: $t('teams._team.members.add.headline.inviteExternMember'),
 			closeLabel: $t('global.button.cancel'),
 			submitLabel: $t('teams._team.members.add.button.inviteMember'),
+			submitDataTestId: 'invite-external-team-member',
+			closeDataTestId: 'invite-external-team-member',
 		});
 
 		$('#federalstate').trigger('change');
